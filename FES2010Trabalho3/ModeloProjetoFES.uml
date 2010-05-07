@@ -48,10 +48,6 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_uNYO4FlWEd-736csfX52YQ" name="Status do Projeto"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_N_KIAFljEd-736csfX52YQ" name="Gerente de Projeto">
     <generalization xmi:id="_aEl94FllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
-    <ownedAttribute xmi:id="_-MW2QFllEd-736csfX52YQ" name="novo Projeto" type="_AIu2oFlWEd-736csfX52YQ" isUnique="false" association="_-MNsUFllEd-736csfX52YQ">
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-MW2QlllEd-736csfX52YQ" value="*"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-MW2QVllEd-736csfX52YQ"/>
-    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_QieZUFljEd-736csfX52YQ" name="Cliente">
     <generalization xmi:id="_hQcgkFllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
@@ -61,6 +57,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_fcmPQFljEd-736csfX52YQ" name="Diretor">
     <generalization xmi:id="_fXcXkFllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
+    <generalization xmi:id="_BsVK0FlrEd-WNKR4OsY1Yw" general="_N_KIAFljEd-736csfX52YQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_fO7KMFlkEd-736csfX52YQ" name="Administrador">
     <generalization xmi:id="_iMpDEFllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
@@ -69,6 +66,10 @@
     <ownedEnd xmi:id="_-MW2Q1llEd-736csfX52YQ" name="gerente de Projeto" type="_N_KIAFljEd-736csfX52YQ" isUnique="false" association="_-MNsUFllEd-736csfX52YQ">
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-MgnQFllEd-736csfX52YQ" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-MgnQVllEd-736csfX52YQ"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_-MW2QFllEd-736csfX52YQ" name="novo Projeto" type="_AIu2oFlWEd-736csfX52YQ" isUnique="false" association="_-MNsUFllEd-736csfX52YQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-MW2QlllEd-736csfX52YQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-MW2QVllEd-736csfX52YQ"/>
     </ownedEnd>
   </packagedElement>
   <profileApplication xmi:id="_wsfLEllVEd-736csfX52YQ">
