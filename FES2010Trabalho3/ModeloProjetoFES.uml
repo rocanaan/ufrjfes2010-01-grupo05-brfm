@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_wsfLEFlVEd-736csfX52YQ" name="ModeloProjetoFES">
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_wsfLEFlVEd-736csfX52YQ" name="ModeloProjetoFES">
   <packageImport xmi:id="_wsfLEVlVEd-736csfX52YQ">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
@@ -16,18 +16,39 @@
     <ownedAttribute xmi:id="_M_nogFlhEd-736csfX52YQ" name="Matrícula" isUnique="false">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
+    <ownedAttribute xmi:id="_pPbZQFl5Ed-cqsF1gjT4NA" name="Stakeholders" type="_k8wYEFlWEd-736csfX52YQ" isUnique="false"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_H7BuQFlWEd-736csfX52YQ" name="Workflow"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_H7BuQFlWEd-736csfX52YQ" name="Workflow">
+    <ownedAttribute xmi:id="_5ZGA8Fl4Ed-cqsF1gjT4NA" name="Processo" type="_bluXQFlWEd-736csfX52YQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_8zPzoFl4Ed-cqsF1gjT4NA" name="Participantes" type="_k8wYEFlWEd-736csfX52YQ" isUnique="false"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_Pl36EFlWEd-736csfX52YQ" name="Banco de Dados">
-    <ownedAttribute xmi:id="_nrJP8FlhEd-736csfX52YQ" name="Usuarios" isUnique="false"/>
+    <ownedAttribute xmi:id="_nrJP8FlhEd-736csfX52YQ" name="Usuarios" type="_R6ZOgFljEd-736csfX52YQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_7Bq9wFl3Ed-cqsF1gjT4NA" name="Projeto" type="_AIu2oFlWEd-736csfX52YQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_C6q6UFl4Ed-cqsF1gjT4NA" name="Arquivo" type="_ZfUrcFlWEd-736csfX52YQ" isUnique="false"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_R07LkFlWEd-736csfX52YQ" name="Documentos"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_R07LkFlWEd-736csfX52YQ" name="Documento"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_UtZ0kFlWEd-736csfX52YQ" name="Histórico"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_ZfUrcFlWEd-736csfX52YQ" name="Arquivos"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_bluXQFlWEd-736csfX52YQ" name="Processos"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZfUrcFlWEd-736csfX52YQ" name="Arquivo">
+    <ownedAttribute xmi:id="_bIEH4Fl3Ed-cqsF1gjT4NA" name="Tipo" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dVUpoVl3Ed-cqsF1gjT4NA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dVUpoFl3Ed-cqsF1gjT4NA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_dVeaoFl3Ed-cqsF1gjT4NA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_w4uX0Fl3Ed-cqsF1gjT4NA" name="Nome" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_T-BtoFl4Ed-cqsF1gjT4NA" name="Formato" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bluXQFlWEd-736csfX52YQ" name="Processo"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_dkFhYFlWEd-736csfX52YQ" name="Relatório"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_fy_o8FlWEd-736csfX52YQ" name="Mensagem"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_i_vRwFlWEd-736csfX52YQ" name="Tarefas"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_i_vRwFlWEd-736csfX52YQ" name="Tarefa"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_k8wYEFlWEd-736csfX52YQ" name="Pessoa">
     <ownedAttribute xmi:id="_DH1n4FldEd-736csfX52YQ" name="Nome" isUnique="false">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -48,19 +69,44 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_uNYO4FlWEd-736csfX52YQ" name="Status do Projeto"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_N_KIAFljEd-736csfX52YQ" name="Gerente de Projeto">
     <generalization xmi:id="_aEl94FllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
+    <ownedAttribute xmi:id="_ifc6QFl5Ed-cqsF1gjT4NA" name="Projetos Anteriores" type="_UtZ0kFlWEd-736csfX52YQ" isUnique="false"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_QieZUFljEd-736csfX52YQ" name="Cliente">
     <generalization xmi:id="_hQcgkFllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
+    <ownedAttribute xmi:id="_MNE50Fl4Ed-cqsF1gjT4NA" name="Empresa" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_P-LM4Fl4Ed-cqsF1gjT4NA" name="Contrato" type="_R07LkFlWEd-736csfX52YQ" isUnique="false"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_R6ZOgFljEd-736csfX52YQ" name="Usuario">
     <generalization xmi:id="_i74HoFllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
+    <ownedAttribute xmi:id="_R8kWwFl5Ed-cqsF1gjT4NA" name="Cargo" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_U3lWYFl5Ed-cqsF1gjT4NA" name="Habilidades" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ckgl0Fl5Ed-cqsF1gjT4NA" name="Projetos Anteriores" type="_UtZ0kFlWEd-736csfX52YQ" isUnique="false"/>
+    <ownedAttribute xmi:id="_0oZcoFl5Ed-cqsF1gjT4NA" name="Property_0" visibility="public" isUnique="false">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1_kq8Fl5Ed-cqsF1gjT4NA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1_a58Fl5Ed-cqsF1gjT4NA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_1_kq8Vl5Ed-cqsF1gjT4NA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_fcmPQFljEd-736csfX52YQ" name="Diretor">
     <generalization xmi:id="_fXcXkFllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
     <generalization xmi:id="_BsVK0FlrEd-WNKR4OsY1Yw" general="_N_KIAFljEd-736csfX52YQ"/>
+    <ownedAttribute xmi:id="_F0_rgFl6Ed-cqsF1gjT4NA" name="Aprova" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_fO7KMFlkEd-736csfX52YQ" name="Administrador">
     <generalization xmi:id="_iMpDEFllEd-736csfX52YQ" general="_k8wYEFlWEd-736csfX52YQ"/>
+    <ownedAttribute xmi:id="_KOCIUFl6Ed-cqsF1gjT4NA" name="Suporte_Ativo" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_-MNsUFllEd-736csfX52YQ" name="A_Gerente de Projeto_Novo Projeto" memberEnd="_-MW2QFllEd-736csfX52YQ _-MW2Q1llEd-736csfX52YQ">
     <ownedEnd xmi:id="_-MW2Q1llEd-736csfX52YQ" name="gerente de Projeto" type="_N_KIAFljEd-736csfX52YQ" isUnique="false" association="_-MNsUFllEd-736csfX52YQ">
@@ -182,7 +228,13 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_juPQUVlzEd-WNKR4OsY1Yw"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_2Y28YFlzEd-WNKR4OsY1Yw" name="Equipe"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2Y28YFlzEd-WNKR4OsY1Yw" name="Equipe">
+    <ownedAttribute xmi:id="_1Yb50Fl2Ed-cqsF1gjT4NA" name="Time" visibility="public" type="_R6ZOgFljEd-736csfX52YQ" isUnique="false">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4_2FYVl2Ed-cqsF1gjT4NA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4_2FYFl2Ed-cqsF1gjT4NA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_4_2FYll2Ed-cqsF1gjT4NA" value=""/>
+    </ownedAttribute>
+  </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_5ZO9IFlzEd-WNKR4OsY1Yw" name="A_Gerente de Projeto_Equipe" memberEnd="_5ZYuIFlzEd-WNKR4OsY1Yw _5ZYuI1lzEd-WNKR4OsY1Yw">
     <ownedEnd xmi:id="_5ZYuI1lzEd-WNKR4OsY1Yw" name="gerente de Projeto" type="_N_KIAFljEd-736csfX52YQ" isUnique="false" association="_5ZO9IFlzEd-WNKR4OsY1Yw">
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5ZifIFlzEd-WNKR4OsY1Yw" value="*"/>
