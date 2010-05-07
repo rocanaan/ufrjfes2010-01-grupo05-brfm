@@ -307,6 +307,26 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MfBFwVl1Ed-WNKR4OsY1Yw"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XEzpoFl-Ed-xBppY4wyW1g" name="Recebe" memberEnd="_XF6c4Fl-Ed-xBppY4wyW1g _XGJGYFl-Ed-xBppY4wyW1g">
+    <ownedEnd xmi:id="_XGJGYFl-Ed-xBppY4wyW1g" name="documento" type="_R07LkFlWEd-736csfX52YQ" isUnique="false" association="_XEzpoFl-Ed-xBppY4wyW1g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XGY-AFl-Ed-xBppY4wyW1g" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XGaMIFl-Ed-xBppY4wyW1g"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_XF6c4Fl-Ed-xBppY4wyW1g" name="Recebe" type="_fcmPQFljEd-736csfX52YQ" isUnique="false" association="_XEzpoFl-Ed-xBppY4wyW1g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XGHRMFl-Ed-xBppY4wyW1g" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XGFcAFl-Ed-xBppY4wyW1g"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_o2KLYFl-Ed-xBppY4wyW1g" name="Cria" memberEnd="_o3iEYFl-Ed-xBppY4wyW1g _o4BzoFl-Ed-xBppY4wyW1g">
+    <ownedEnd xmi:id="_o4BzoFl-Ed-xBppY4wyW1g" name="novo Projeto" type="_AIu2oFlWEd-736csfX52YQ" isUnique="false" association="_o2KLYFl-Ed-xBppY4wyW1g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_o4V8sFl-Ed-xBppY4wyW1g" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_o4YY8Fl-Ed-xBppY4wyW1g"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_o3iEYFl-Ed-xBppY4wyW1g" name="Cria" type="_R07LkFlWEd-736csfX52YQ" isUnique="false" association="_o2KLYFl-Ed-xBppY4wyW1g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_o3_XYFl-Ed-xBppY4wyW1g" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_o37tAFl-Ed-xBppY4wyW1g"/>
+    </ownedEnd>
+  </packagedElement>
   <profileApplication xmi:id="_wsfLEllVEd-736csfX52YQ">
     <eAnnotations xmi:id="_wsfLE1lVEd-736csfX52YQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/schemas/Standard/1#/"/>
