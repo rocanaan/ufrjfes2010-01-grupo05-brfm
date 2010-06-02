@@ -1,0 +1,398 @@
+model EditoraABC
+
+
+-- Classes
+
+class Date 
+attributes
+  dia : Integer
+  mes : Integer
+  ano : Integer
+end
+
+class Autor
+attributes
+  nome : String
+  salary : Integer
+end
+
+class Manuscrito
+attributes
+  nome : String
+  descricao : String
+end
+
+class Editor
+attributes
+  nome : String
+end
+
+class Livro
+attributes
+  nome : String
+  preco : Real
+  prazoEntrega : Date
+  disponibilidade : Boolean
+  estado : Boolean 
+end
+
+class Grafica
+attributes
+  nome : String
+  cotacao : Cotacao
+end
+
+class Estoque
+attributes
+  produto : Livro
+  qtd : Integer
+  relatorio : Relatorio
+  enviaPedido : Boolean
+end
+
+class Pagamento
+attributes
+  valorTotal : Real
+  valor : Real
+  dataPgt : Date
+end
+
+class Comercial
+attributes
+  autorizacao : Boolean
+  validade : Date
+operations
+  calcDirAutoral(preco : Integer, totalVendas : Real)
+end
+
+class Fatura
+attributes
+  nomeCliente : String
+  valor : Real
+  formaPgmt : Integer
+  Prazo : Date
+end
+
+class Transportadora
+attributes
+  nome : String
+  custo : Real
+  frete : Real
+  dataEnvio : Date
+operations
+  valorEntrega(custo : Real, frete : Real)
+end
+
+class Cotacao
+attributes
+  grafica : Grafica
+  livro : Livro
+  valorImpressao : Real
+end
+
+class Cliente
+attributes
+  nome : String
+  endereco : String
+  fatura : Fatura
+  relatorio : Relatorio
+  recebeu : Boolean
+  qtdVendida : Integer
+end
+
+class PedidoCompra
+attributes
+  livros : Livro
+  qtd : Integer
+  formaEnvio : Integer
+  valorTotal : Real
+  status : String
+  
+end
+
+class Contabilidade
+attributes
+  relatorio : Relatorio
+  valorTotal : Real
+end
+
+class Contrato
+attributes
+  txDirAutoral : Integer
+  prazo : Date
+  divDirAutoral : Integer
+end
+
+class PedidoDevolucao
+attributes
+  nomeCliente : String
+  produto : Livro
+  motivo : String
+  dataDev : Date
+end
+
+abstract class Relatorio
+attributes
+  data : String
+  assunto : String
+end
+
+class paraCliente < Relatorio
+
+  operations
+  
+  getStatusPedidos() : Set(Tuple(livros : PedidoCompra, status : String )) = 
+	   			   pedido->collect(x |
+	   			   Tuple{livros = x,
+	   			   	status = x.status})->asSet()
+					
+  getFaturas() : Set(Tuple(fatura : Fatura, prazo : Date,valor : Real )) = 
+	   			   fatura->collect(x |
+	   			   Tuple{fatura = x,
+	   			   	 prazo = x.Prazo,
+					 valor = x.valor})->asSet()
+
+  getPagamentos() : Set(Tuple(data : Date, valor : Real )) = 
+	   			   pagamento->collect(x |
+	   			   Tuple{data = x.dataPgt,
+	   			   	valor = x.valor})->asSet()
+
+  getDevolucoes() : Set(Tuple(devolucao : PedidoDevolucao, data : Date )) = 
+	   			   devolucao->collect(x |
+	   			   Tuple{devolucao = x,
+	   			   	data = x.dataDev})->asSet()
+  
+end
+
+class paraAutor < Relatorio
+attributes
+  totalVendaLivro : Real
+  dinheiroRecebido : Real
+  qtdLivroEstoque : Integer  
+end
+
+class paraContabilidade < Relatorio
+
+  operations
+
+  getValorTotal() : Set(Tuple(total : Real )) = 
+	   			   contabilidade01->collect(x |
+	   			   Tuple{total = x.valorTotal})->asSet()
+
+  getValorPago() : Set(Tuple(total : Real )) = 
+	   			   pagamento->collect(x |
+	   			   Tuple{total = x.valorTotal})->asSet()
+
+  getQtdEstoque() : Set(Tuple(produto : Livro,qtd : Integer )) = 
+	   			   estoque02->collect(x |
+	   			   Tuple{produto = x.produto,
+					 qtd = x.qtd})->asSet()
+
+
+end
+
+-- Associations
+
+
+
+association escreve between
+  Autor[1..*] role autor
+  Manuscrito[1..*] role manuscrito
+end
+
+association revisa between
+  Manuscrito[1..*] role manuscrito
+  Editor[1..*] role editor
+end
+
+association edita between
+  Editor[1..*] role editor
+  Livro[1..*] role livro
+end
+
+association imprime between
+  Livro[1..*] role livro
+  Grafica[1] role grafica
+end
+
+association atualiza between
+  Grafica[1..*] role grafica
+  Estoque[1] role estoque
+end
+
+association informa between
+  Estoque[1] role estoque
+  Comercial[1] role comercial
+end
+
+association fatura between
+  Comercial[1] role comercial
+  Fatura[0..*] role fatura
+end
+
+association paga between
+  Cliente[1..*] role cliente
+  Fatura[0..*] role fatura
+end
+
+association recebe between
+  Contabilidade[1] role contabilidade
+  Pagamento[1..*] role pagamento
+end
+
+association quita between
+  Pagamento[1..*] role pagamento
+  Fatura[1] role fatura
+end
+
+association efetua between
+  Cliente[1] role cliente
+  Pagamento[1..*] role pagamento
+end
+
+association solicita02 between
+  Editor[1..*] role editor
+  Cotacao[0..*] role cotacao
+end
+
+association escolhe between
+  Cotacao[0..*] role cotacao
+  Grafica[1..*] role grafica
+end
+
+association preenche between
+  Livro[1..*] role livro
+  PedidoCompra[1..*] role  compra
+end
+
+association faz between
+  Cliente[1..*] role cliente
+  PedidoCompra[1..*] role  compra
+end
+
+association consulta between
+  Cliente[1..*] role cliente
+  Livro[1..*] role livro
+end
+
+association autoriza between
+  PedidoDevolucao[0..*] role devolucao
+  Comercial[1] role comercial
+end
+
+association prepara between
+  Estoque[1] role estoque
+  PedidoCompra[1..*] role compra
+end
+
+association recebe01 between
+  Comercial[1] role comercial
+  Contrato[1..*] role contrato
+end
+
+association encaminha between
+  PedidoDevolucao[1..*] role devolucao
+  Estoque[1] role estoque
+end
+
+association assina between
+  Autor[1..*] role autor
+  Contrato[1] role contrato
+end
+
+association recebe02 between
+  Autor[1..*] role autor
+  paraAutor[1..*] role relatorioAutor
+end
+
+association envia between
+  Estoque[1] role estoque
+  Transportadora[1..*] role transportadora
+end
+
+association emite01 between
+  Estoque[1] role estoque
+  paraContabilidade[1..*] role relatorioContabilidade
+end
+
+association emite02 between
+  Comercial[1] role comercial
+  paraCliente[1..*] role relatorioCliente
+end
+
+
+association emite03 between
+  paraCliente[1] role relatorioCliente
+  Cliente[1..*] role cliente
+end
+
+association emite04 between
+  paraContabilidade[1] role relatorioContabilidade
+  Contabilidade[1] role contabilidade
+end
+
+association solicita01 between
+  Cliente[1..*] role cliente
+  PedidoDevolucao[1..*] role pedidodevolucao
+end
+
+association entrega between
+  Transportadora[1] role transportadora
+  Cliente[1..*] role cliente
+end
+
+association totalVenda between
+  paraContabilidade[1] role relatorio01
+  Contabilidade[1..*] role contabilidade01
+end
+
+association totalPago between
+  paraContabilidade[1] role relatorio02
+  Pagamento[1..*] role pagamento
+end
+
+association qtdTotalEstoque between
+  paraContabilidade[1] role relatorio03
+  Estoque[1..*] role estoque02
+end
+
+association pedidos between
+  paraCliente[1] role relatorio
+  PedidoCompra[1..*] role pedido
+end
+
+association faturas between
+  paraCliente[1] role relatorio
+  Fatura[1..*] role fatura
+end
+
+association pagamentos between
+  paraCliente[1] role relatorio
+  Pagamento[1..*] role pagamento
+end
+
+association devolucoes between
+  paraCliente[1] role relatorio
+  PedidoDevolucao[1..*] role devolucao
+end
+
+
+--Constraints
+
+constraints
+
+--context Date.dia
+--init: 1
+
+context Comercial
+inv autorizaDevolucao : 
+--ele diz que ta usando bag?!
+	if (relatorioCliente.pedido.livros->forAll(estado = false)) or (devolucao.cliente.qtdVendida->size() < relatorioCliente.pedido.qtd->size()) then
+		autorizacao = true
+	else
+		autorizacao = false
+	endif
+	
+context Transportadora
+inv enviaPedido : estoque.compra->forAll(qtd > 1)
+inv vencFatura : dataEnvio = dataEnvio.dia + 30   
