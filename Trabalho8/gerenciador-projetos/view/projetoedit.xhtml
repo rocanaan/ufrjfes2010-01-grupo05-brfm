@@ -1,0 +1,87 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+	  			xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich"
+				template="template.xhtml">
+				
+    <!-- content -->
+<ui:define name="content">
+<div class="section">
+	<h1>Editar Projeto</h1>
+</div>
+
+<div class="entry errors">
+		<h:messages id="messages" globalOnly="true"/>
+	</div>
+
+<div class="section">
+    <div style="clear:both"/>
+
+	<h:form id="projetoUsuario">
+	<fieldset>
+	
+  
+   <s:decorate id="DecorateNome" template="display.xhtml">             
+		<ui:define name="label">Nome:</ui:define>
+		<h:inputText id="nome" value="#{projeto.nome}" required="true">
+				<a:support id="onblur" event="onblur" reRender="nomeDecorate"/>
+		</h:inputText>
+	</s:decorate>
+	
+    <s:decorate id="DecorateCliente" template="display.xhtml">             
+		<ui:define name="label">Cliente:</ui:define>
+		<h:inputText id="cliente" value="#{projeto.cliente}" required="true">
+				<a:support id="onblur" event="onblur" reRender="clienteDecorate"/>
+		</h:inputText>
+	</s:decorate>
+	
+    <s:decorate id="DecorateLocalizacao" template="display.xhtml">             
+		<ui:define name="label">Localizacao:</ui:define>
+		<h:inputText id="localizacao" value="#{projeto.localizacao}" required="true">
+				<a:support id="onblur" event="onblur" reRender="localizacaoDecorate"/>
+		</h:inputText>
+	</s:decorate>
+	
+    <s:decorate id="DecoratedescricaoBreve" template="display.xhtml">             
+		<ui:define name="label">Descricao Breve:</ui:define>		
+		<h:inputText id="descricaoBreve" value="#{projeto.descricaoBreve}" required="true">
+				<a:support id="onblur" event="onblur" reRender="descricaoBreveDecorate"/>
+		</h:inputText>
+	</s:decorate>
+	
+    <s:decorate id="DecorateDescricao" template="display.xhtml">             
+		<ui:define name="label">Descricao:</ui:define>		
+		<h:inputText id="descricao" value="#{projeto.descricao}" required="true">
+				<a:support id="onblur" event="onblur" reRender="descricaoDecorate"/>
+		</h:inputText>
+	</s:decorate>
+	
+		<div class="buttonBox">
+			<h:commandButton id="proceed" value="Atualizar" action="#{editarProjeto.confirmProjeto}"/>
+			&#160;
+			<s:button id="cancel" value="Voltar" action="#{editarProjeto.cancel}"/>
+		</div>
+		
+	</fieldset>
+	</h:form>
+</div>
+</ui:define>
+<!-- sidebar -->
+<ui:define name="sidebar">
+<h1>Calendario</h1>
+<div id="calendario"><img src="img/calendario1.jpg" alt="Calendario de Eventos"/></div>
+<br/>
+<p>
+   Eventos de hoje
+</p>
+<p>
+   Eventos seguintes
+</p>
+
+</ui:define>
+	  
+</ui:composition>

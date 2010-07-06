@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:a="http://richfaces.org/a4j">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>FES: Gerenciador de Projetos</title>
+	<link href="css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="pgHome">
+
+<div id="document">
+
+	<div id="header">
+		<div id="title"><img src="img/hdr.title.gif" alt="FES 2010/1: seam framework"/></div>
+	</div>
+	
+	<div id="container">
+	
+<h1>Calendario</h1>
+<div id="calendario"><img src="img/calendario1.jpg" alt="Calendario de Eventos"/></div>
+<br/>
+<p>
+   Eventos de hoje
+</p>
+<p>
+   Eventos seguintes
+</p>
+
+</div>
+		
+		<div id="content">
+		
+			<div class="section">
+				<h1>Registrar Usuario</h1>
+			</div>
+			
+			<div class="section">
+                
+				<div class="entry errors">
+					<h:messages id="messages" globalOnly="true"/>
+				</div>
+
+                <h:form id="registration">
+				<fieldset>
+				
+					<s:decorate id="usernameDecorate" template="edit.xhtml">
+						<ui:define name="label">Login:</ui:define>
+						<h:inputText id="username" value="#{user.username}" required="true">
+							<a:support id="onblur" event="onblur" reRender="usernameDecorate"/>
+						</h:inputText>
+					</s:decorate>
+					
+					<s:decorate id="nameDecorate" template="edit.xhtml">
+						<ui:define name="label">Nome:</ui:define>
+						<h:inputText id="nome" value="#{user.nome}" required="true">
+							<a:support id="onblur" event="onblur" reRender="nameDecorate"/>
+						</h:inputText>
+					</s:decorate>
+					
+					<s:decorate id="passwordDecorate" template="edit.xhtml">
+						<ui:define name="label">Senha:</ui:define>
+						<h:inputSecret id="password" value="#{user.password}" required="true"/>
+					</s:decorate>
+					
+					<s:decorate id="verifyDecorate" template="edit.xhtml">
+						<ui:define name="label">Verificar Senha:</ui:define>
+						<h:inputSecret id="verify" value="#{register.verify}" required="true"/>
+					</s:decorate>
+					
+					<s:decorate id="perfilDecorate" template="edit.xhtml">
+						<ui:define name="label">Perfil:</ui:define>
+						<h:inputText id="perfil" value="#{user.perfil}" required="true">
+							<a:support id="onblur" event="onblur" reRender="perfilDecorate"/>
+						</h:inputText>
+					</s:decorate>
+					
+					<div class="buttonBox">
+						<h:commandButton id="register" value="Register" action="#{register.register}"/>
+						&#160;
+						<s:button id="cancel" value="Cancel" view="/home.xhtml"/>
+					</div>
+									
+				</fieldset>
+                </h:form>
+                
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div id="footer">Criado com JBoss EJB 3.0, Seam, JSF (Mojarra), e Facelets</div>
+	
+</div>
+
+</body>
+
+</html>

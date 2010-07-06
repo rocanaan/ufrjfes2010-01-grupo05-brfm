@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view contentType="text/html"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:s="http://jboss.com/products/seam/taglib">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>FES: Gerenciador de Projetos</title>
+	<link href="css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="document">
+	<div id="header">
+		<div id="title"><img src="img/hdr.title.gif" alt="FES 2010/1: seam framework"/></div>
+		<div id="status">
+            Bem vindo #{user.nome}
+            | <s:link id="search" view="/main.xhtml" value="Pagina Inicial" propagation="none"/>
+            | <s:link id="settings" view="/password.xhtml" value="Configuracoes" propagation="none"/>
+            | <s:link id="logout" action="#{identity.logout}" value="Logout"/>
+		</div>
+	</div>
+	<div id="container">
+		<div id="sidebar">
+			<ui:insert name="sidebar"/>
+		</div>
+		<div id="content">
+			<ui:insert name="content"/>
+		    <ui:include src="conversations.xhtml" />
+		</div>
+	</div>
+	<div id="footer">Criado com JBoss EJB 3.0, Seam, JSF (Mojarra), e Facelets</div>
+</div>
+<!-- sidebar -->
+<ui:define name="sidebar">
+
+<h1>Calendario</h1>
+<p>
+  Agenda
+</p>
+</ui:define>
+</body>
+</html>
+</f:view>

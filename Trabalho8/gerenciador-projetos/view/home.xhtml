@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>FES: Gerenciador de Projetos</title>
+	<link href="css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="pgHome">
+<f:view>
+<div id="document">
+	<div id="header">
+		<div id="title"><img src="img/hdr.title.gif" alt="FES: Gerenciador de Projetos"/></div>
+	</div>
+	<div id="container">
+		<div id="sidebar">
+            <h:form id="login">
+			<fieldset>
+				<div>
+					<h:outputLabel id="UsernameLabel" for="username">Login</h:outputLabel>
+					<h:inputText id="username" value="#{identity.username}" style="width: 175px;"/>
+					<div class="errors"><h:message id="UsernameMessage" for="username"/></div>
+				</div>
+				<div>
+					<h:outputLabel id="PasswordLabel" for="password">Password</h:outputLabel>
+					<h:inputSecret id="password" value="#{identity.password}" style="width: 175px;"/>
+				</div>
+				<div class="errors"><h:messages id="messages" globalOnly="true"/></div>
+				<div class="buttonBox"><h:commandButton id="login" action="#{identity.login}" value="Entrar"/></div>
+                <div class="subnotes">
+                    Problemas com login? Entre em contato:
+                    <ul>
+                        <li>fes@adm.com.bre</li>
+                    </ul>
+                </div>
+			</fieldset>
+            </h:form>
+		</div>
+		<div id="content">
+			<div class="section">
+				
+			    <h1>Trabalho de FES: Gerenciador de Processos </h1>
+			    
+			    <p>
+			       GP-RUP e uma ferramenta de planejamento e monitoramento de projetos RUP.
+			       Para resumir o processo de planejamento, o diretor cria um novo projeto; 
+			       os gerentes cadastram tarefas e as delegam para cada funcionario; por sua
+			       vez os funcionarios realizam as tarefas e incluem um arquivo a cerca das 
+			       aleracoes na tarefa; os clientes incluem novas alteracoes a serem efetuadas
+			        a cada iteracao de desenvolvimento. 
+				
+				   Esperamos com esta ferramenta evoluir nossa compreensao dos 
+				   aspectos ensinados em sala de aula durante a disciplina Fundamentos da 
+				   Engenharias de Software 2010/1, Professor Eber, UFRJ. 
+				 </p>
+				 <p>  
+				   Se voce gostaria de discutir as abordagens de planejamento suportados por 
+				   esta ferramenta ou fornecer um feedback ou sugestoes, entre em contato
+				   atraves de fes@adm.com.br 
+                </p>
+			    
+			   			    
+							
+			</div>
+		</div>
+	</div>
+	<div id="footer">Criado com JBoss EJB 3.0, Seam, JSF (Mojarra), e Facelets</div>
+</div>
+</f:view>
+</body>
+</html>
