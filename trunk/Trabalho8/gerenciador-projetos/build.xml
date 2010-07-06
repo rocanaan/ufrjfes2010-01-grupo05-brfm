@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<project name="GerenciadorProjetos" default="deploy" basedir=".">
+
+    <!-- Naming -->
+    <property name="Name"                   value="Trabalho de FES - Gerenciador de Projetos"/>
+    <property name="example.name"           value="gerenciador-projetos"/>
+	
+    <!-- Libraries to include -->
+    <property name="seam.ui.lib"    value="yes"/>
+    <property name="seam.debug.lib" value="yes"/>
+    <property name="facelets.lib"   value="yes"/>
+    <property name="richfaces.lib"   value="yes"/>
+	
+	<!-- Datasource -->
+    <property name="example.ds"             value="gerenciador-projetos-ds.xml"/>
+    
+    <import file="build2.xml"/>
+</project>
