@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		 xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			 xmlns:h="http://java.sun.com/jsf/html"
+	  			 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:s="http://jboss.com/products/seam/taglib">
+    
+    <s:decorate id="DecorateNome" template="display.xhtml">             
+		<ui:define name="label">Nome:</ui:define>
+		#{tarefa.nome}
+	</s:decorate>
+	
+    <s:decorate id="DecorateProjeto" template="display.xhtml">             
+		<ui:define name="label">Projeto:</ui:define>
+		#{tarefa.projeto.nome}
+	</s:decorate>
+	
+    <s:decorate id="DecorateDescricao" template="display.xhtml">             
+		<ui:define name="label">Descricao Breve:</ui:define>
+		#{tarefa.descricaoBreve}
+	</s:decorate>
+	
+	
+    <s:decorate id="DecorateDescricao" template="display.xhtml">             
+		<ui:define name="label">Descricao:</ui:define>
+		#{tarefa.descricao}
+	</s:decorate>
+	
+	<s:decorate id="DecoratePrazo" template="display.xhtml">             
+		<ui:define name="label">Prazo:</ui:define>
+		#{tarefa.prazo}
+	</s:decorate>
+	
+	<s:decorate id="DecorateAndamento" template="display.xhtml">             
+		<ui:define name="label">Andamento:</ui:define>
+		#{tarefa.andamento}
+	</s:decorate>
+	
+
+	  
+</ui:composition>

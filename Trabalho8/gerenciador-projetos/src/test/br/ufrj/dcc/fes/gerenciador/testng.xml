@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="Genrendiador de Projetos" verbose="2" parallel="false">
+
+   <test name="Genrendiador de Projetos">
+     <classes>
+       <class name="test.br.ufrj.dcc.fes.gerenciador.LoginTest"/>
+       <class name="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest"/>
+       <class name="test.br.ufrj.dcc.fes.gerenciador.ChangePasswordTest"/>
+     </classes>
+   </test>
+	
+</suite>

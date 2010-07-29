@@ -1,0 +1,132 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+	  			xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:a="http://richfaces.org/a4j"
+				template="template.xhtml">
+
+<!-- content -->
+<ui:define name="content">
+
+<div class="section">
+	<h1>Editar Projeto</h1>
+</div>
+	<div class="entry errors">
+		<h:messages id="messages" globalOnly="true"/>
+	</div>
+<div class="section">
+	<ui:include src="projetoview.xhtml"/>
+
+	<div class="buttonBox">
+		<h:form id="participacao">
+			<h:commandButton id="participaProjeto" action="#{participarProjeto.participarProjeto}" value="Participar"/>
+			&#160;
+			<h:commandButton id="edit" action="#{editarProjeto.selectProjeto}" value="Editar"/>
+			&#160;
+			<h:commandButton id="cancel" action="#{participarProjeto.cancel}" value="Voltar"/>
+		</h:form>
+	</div>
+</div>
+
+<div class="section">
+   <h1>Procurar Tarefas Delegadas</h1>
+
+	<h:form id="searchJobCriteria">
+	<fieldset> 
+	   <h:inputText id="searchStringT" value="#{tarefaSearch.searchString}" style="width: 165px;">
+         <a:support id="onkeyup" event="onkeyup" actionListener="#{tarefaSearch.find}" reRender="searchJobResults" />
+       </h:inputText>
+       &#160;
+	   <a:commandButton id="findJobs" value="Buscar" action="#{tarefaSearch.find}" reRender="searchJobResults"/>
+       &#160;
+       <a:status id="statusT">
+          <f:facet id="StartStatusT" name="start">
+             <h:graphicImage id="SpinnerGifT" value="/img/spinner.gif"/>
+          </f:facet>
+       </a:status>
+	   <br/>
+       <h:outputLabel id="MaximumResultsLabelT" for="pageSize">Maximo por pagina:</h:outputLabel>&#160;
+       <h:selectOneMenu id="pageSizeT" value="#{tarefaSearch.pageSize}">
+          <f:selectItem id="PageSize5T" itemLabel="5" itemValue="5"/>
+          <f:selectItem id="PageSize10T" itemLabel="10" itemValue="10"/>
+          <f:selectItem id="PageSize20T" itemLabel="20" itemValue="20"/>
+       </h:selectOneMenu>
+    </fieldset>
+    </h:form>
+    
+</div>
+
+<a:outputPanel id="searchJobResults">
+  <div class="section">
+	<h:outputText id="NoJobFoundMessage" value="Nenhuma tarefa encontrada" rendered="#{tarefas != null and tarefas.rowCount==0}"/>
+	<h:dataTable id="tarefas" value="#{tarefas}" var="tar" rendered="#{tarefas.rowCount>0}">
+		<h:column id="column1T">
+			<f:facet id="NameFacetT" name="header">Nome Tarefa</f:facet>
+			#{tar.nome}
+		</h:column>
+		<h:column id="column2T">
+			<f:facet id="AddressFacetT" name="header">Projeto</f:facet>
+			#{tar.projeto.nome}
+		</h:column>
+		<h:column id="column3T">
+			<f:facet id="CityStateFacetT" name="header">Prazo</f:facet>
+			#{tar.prazo}
+		</h:column> 
+		<h:column id="column4T">
+			<f:facet id="ZipFacetT" name="header">Usuario</f:facet>
+			#{tar.usuario.username}
+		</h:column>
+		<h:column id="column5T">
+			<f:facet id="UrgenciaFacetT" name="header">Urgencia</f:facet>
+			#{tar.urgencia}
+		</h:column>
+		<h:column id="column6T">
+			<f:facet id="ActionFacetT" name="header">Action</f:facet>
+			 <s:link id="editTarefa" action="#{editarTarefa.selectTarefa(tar)}" value="Editar Tarefa"/>
+		</h:column>
+	</h:dataTable>
+	<s:link id="MoreResultsLinkT" value="Mais resultados" action="#{tarefaSearch.nextPage}" rendered="#{tarefaSearch.nextPageAvailable}"/>
+  
+	<div class="buttonBox2">
+		<h:form id="novaTarefa">
+			<h:commandButton id="newJob"  value="Nova Tarefa" action="#{newTarefa.novaTarefa}"/>
+  </h:form>
+  </div>
+  </div>
+</a:outputPanel>
+
+<div class="section">
+	<h1>Tarefas Nao Delegadas</h1>
+</div>
+
+<div class="section">
+	<h1>Arquivos Pendentes de Aprovacao</h1>
+</div>
+
+<div class="section">
+	<h1>Tarefas Concluidas</h1>
+</div>
+
+
+<div class="section">
+	<h1>Relatorios</h1>
+</div>
+</ui:define>
+
+<!-- sidebar -->
+<ui:define name="sidebar">
+<h1>Calendario</h1>
+<div id="calendario"><img src="img/calendario1.jpg" alt="Calendario de Eventos"/></div>
+<br/>
+<p>
+   Eventos de hoje
+</p>
+<p>
+   Eventos seguintes
+</p>
+
+</ui:define>
+
+</ui:composition>
