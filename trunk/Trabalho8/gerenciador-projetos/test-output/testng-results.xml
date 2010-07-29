@@ -1,0 +1,56 @@
+<testng-results>
+  <reporter-output>
+  </reporter-output>
+  <suite name="gerenciador-projetos">
+    <groups>
+    </groups>
+    <test name="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+      <class name="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+        <test-method status="SKIP" signature="testGerenciadorProjetos()" name="testGerenciadorProjetos" duration-ms="3" started-at="2010-07-28T20:12:15Z" finished-at="2010-07-28T20:12:15Z">
+        </test-method>
+        <test-method status="SKIP" signature="stopSeam()" name="stopSeam" is-config="true" duration-ms="0" started-at="2010-07-28T20:12:15Z" finished-at="2010-07-28T20:12:15Z">
+        </test-method>
+        <test-method status="SKIP" signature="end()" name="end" is-config="true" duration-ms="0" started-at="2010-07-28T20:12:15Z" finished-at="2010-07-28T20:12:15Z">
+        </test-method>
+        <test-method status="SKIP" signature="setupClass()" name="setupClass" is-config="true" duration-ms="0" started-at="2010-07-28T20:12:15Z" finished-at="2010-07-28T20:12:15Z">
+        </test-method>
+        <test-method status="FAIL" signature="startSeam()" name="startSeam" is-config="true" duration-ms="0" started-at="2010-07-28T20:12:15Z" finished-at="2010-07-28T20:12:15Z">
+          <exception class="org.jboss.deployers.spi.DeploymentException">
+            <message>
+              <![CDATA[Unable to find bootstrap file: conf/bootstrap-beans.xml in classpath]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.jboss.deployers.spi.DeploymentException: Unable to find bootstrap file: conf/bootstrap-beans.xml in classpath
+	at org.jboss.embedded.Bootstrap.bootstrap(Bootstrap.java:181)
+	at org.jboss.embedded.Bootstrap.bootstrap(Bootstrap.java:195)
+	at org.jboss.seam.mock.EmbeddedBootstrap.startAndDeployResources(EmbeddedBootstrap.java:11)
+	at org.jboss.seam.mock.AbstractSeamTest.startJbossEmbeddedIfNecessary(AbstractSeamTest.java:1024)
+	at org.jboss.seam.mock.AbstractSeamTest.startSeam(AbstractSeamTest.java:915)
+	at org.jboss.seam.mock.SeamTest.startSeam(SeamTest.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:607)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:417)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:154)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:88)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:284)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:204)
+	at org.testng.TestNG.createAndRunSuiteRunners(TestNG.java:877)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:842)
+	at org.testng.TestNG.run(TestNG.java:751)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:73)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:124)
+]]>
+            </full-stacktrace>
+          </exception>
+        </test-method>
+        <test-method status="SKIP" signature="cleanupClass()" name="cleanupClass" is-config="true" duration-ms="0" started-at="2010-07-28T20:12:15Z" finished-at="2010-07-28T20:12:15Z">
+        </test-method>
+        <test-method status="SKIP" signature="begin()" name="begin" is-config="true" duration-ms="0" started-at="2010-07-28T20:12:15Z" finished-at="2010-07-28T20:12:15Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

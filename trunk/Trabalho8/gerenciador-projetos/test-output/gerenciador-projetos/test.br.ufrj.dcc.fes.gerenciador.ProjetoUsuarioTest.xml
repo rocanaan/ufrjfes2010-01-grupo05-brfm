@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest" failures="0" tests="1" time="0.048" errors="0">
+  <properties/>
+  <testcase name="@BeforeSuite startSeam" time="0.0" classname="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+    <failure type="org.jboss.deployers.spi.DeploymentException" message="Unable to find bootstrap file: conf/bootstrap-beans.xml in classpath">
+      <![CDATA[org.jboss.deployers.spi.DeploymentException: Unable to find bootstrap file: conf/bootstrap-beans.xml in classpath
+	at org.jboss.embedded.Bootstrap.bootstrap(Bootstrap.java:181)
+	at org.jboss.embedded.Bootstrap.bootstrap(Bootstrap.java:195)
+	at org.jboss.seam.mock.EmbeddedBootstrap.startAndDeployResources(EmbeddedBootstrap.java:11)
+	at org.jboss.seam.mock.AbstractSeamTest.startJbossEmbeddedIfNecessary(AbstractSeamTest.java:1024)
+	at org.jboss.seam.mock.AbstractSeamTest.startSeam(AbstractSeamTest.java:915)
+	at org.jboss.seam.mock.SeamTest.startSeam(SeamTest.java:58)
+... Removed 15 stack frames]]>
+    </failure>
+  </testcase>
+  <testcase name="@BeforeClass setupClass" time="0.0" classname="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+    <skipped/>
+  </testcase>
+  <testcase name="@BeforeMethod begin" time="0.0" classname="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+    <skipped/>
+  </testcase>
+  <testcase name="@AfterMethod end" time="0.0" classname="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+    <skipped/>
+  </testcase>
+  <testcase name="@AfterClass cleanupClass" time="0.0" classname="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+    <skipped/>
+  </testcase>
+  <testcase name="testGerenciadorProjetos" time="0.003" classname="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+    <skipped/>
+  </testcase>
+</testsuite>

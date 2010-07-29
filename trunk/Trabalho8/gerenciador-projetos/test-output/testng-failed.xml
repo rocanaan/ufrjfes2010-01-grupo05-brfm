@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="5" skipfailedinvocationcounts="false" verbose="1" name="Failed suite [gerenciador-projetos]" junit="false" parallel="false" annotations="JDK">
+  <test name="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest(failed)" junit="false" parallel="false" annotations="JDK">
+    <classes>
+      <class name="test.br.ufrj.dcc.fes.gerenciador.ProjetoUsuarioTest">
+        <methods>
+          <include name="testGerenciadorProjetos"/>
+          <include name="startSeam"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
